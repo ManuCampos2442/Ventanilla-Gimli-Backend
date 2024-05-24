@@ -1,6 +1,8 @@
 package co.ventanilla_gimli.servicios.interfaces;
 
 import co.ventanilla_gimli.dto.*;
+import co.ventanilla_gimli.dto.ClienteDTO.DetalleCompraClienteDTO;
+import co.ventanilla_gimli.dto.ClienteDTO.ItemCompraClienteDTO;
 import co.ventanilla_gimli.dto.ClienteDTO.ModificarClienteDTO;
 import co.ventanilla_gimli.dto.ClienteDTO.RegistroClienteDTO;
 
@@ -14,5 +16,7 @@ public interface ClienteServicio {
     FiltroBusquedaDTO filtrarProductoPorNombre(String nombreProducto);
     int realizarCompra(RegistroCompraClienteDTO registroCompraClienteDTO) throws Exception;
     DetalleProductoDTO verDetalleProducto(int codigoProducto) throws Exception;
+    DetalleCompraClienteDTO verDetalleCompra(int codigoCompra) throws Exception;
+    List<ItemCompraClienteDTO> comprasRealizadas(int codigoCliente);
 
 }

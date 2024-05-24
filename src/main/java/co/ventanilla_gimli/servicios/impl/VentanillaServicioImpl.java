@@ -1,9 +1,6 @@
 package co.ventanilla_gimli.servicios.impl;
 
-import co.ventanilla_gimli.dto.AgregarProductoDTO;
-import co.ventanilla_gimli.dto.EmailDTO;
-import co.ventanilla_gimli.dto.RegistroProductoDTO;
-import co.ventanilla_gimli.dto.RegistroVentaEmpleadoDTO;
+import co.ventanilla_gimli.dto.*;
 import co.ventanilla_gimli.model.*;
 import co.ventanilla_gimli.repositorios.ClienteRepo;
 import co.ventanilla_gimli.repositorios.EmpleadoRepo;
@@ -13,6 +10,7 @@ import co.ventanilla_gimli.servicios.interfaces.EmailServicio;
 import co.ventanilla_gimli.servicios.interfaces.VentanillaServicio;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -279,6 +277,156 @@ public class VentanillaServicioImpl implements VentanillaServicio {
         }
 
         return 0;
+    }
+
+    @Override
+    public DetalleProductoDTO verDetalleProducto(int codigoProducto) throws Exception {
+
+        Optional<Producto> productoEncontrado = productoRepo.findById(codigoProducto);
+
+
+        if(productoEncontrado.get().getCategoria().equals(Categoria.ALCOHOL)){
+            for(String nombre : productoEncontrado.get().getNombresAlcohol()){
+                return new DetalleProductoDTO(
+                        productoEncontrado.get().getCodigo(),
+                        nombre,
+                        productoEncontrado.get().getDescripcion(),
+                        productoEncontrado.get().getPrecio(),
+                        productoEncontrado.get().getCantidad(),
+                        productoEncontrado.get().getCategoria(),
+                        productoEncontrado.get().getSubcategoria(),
+                        productoEncontrado.get().getProveedor()
+                );
+            }
+        }
+        if(productoEncontrado.get().getCategoria().equals(Categoria.DULCES)){
+            for(String nombre : productoEncontrado.get().getNombresDulces()){
+                return new DetalleProductoDTO(
+                        productoEncontrado.get().getCodigo(),
+                        nombre,
+                        productoEncontrado.get().getDescripcion(),
+                        productoEncontrado.get().getPrecio(),
+                        productoEncontrado.get().getCantidad(),
+                        productoEncontrado.get().getCategoria(),
+                        productoEncontrado.get().getSubcategoria(),
+                        productoEncontrado.get().getProveedor()
+                );
+            }
+        }else{
+            for(String nombre : productoEncontrado.get().getNombresGaseosas()){
+                return new DetalleProductoDTO(
+                        productoEncontrado.get().getCodigo(),
+                        nombre,
+                        productoEncontrado.get().getDescripcion(),
+                        productoEncontrado.get().getPrecio(),
+                        productoEncontrado.get().getCantidad(),
+                        productoEncontrado.get().getCategoria(),
+                        productoEncontrado.get().getSubcategoria(),
+                        productoEncontrado.get().getProveedor()
+                );
+            }
+
+        }
+
+        return null;
+    }
+
+    @Override
+    @Transactional
+    public FiltroBusquedaDTO filtrarProductoPorNombre(String nombreProducto) {
+
+        List<Producto> productos = productoRepo.findAll();
+
+        for (Producto producto : productos) {
+            for (String nombre : producto.getNombresAlcohol()) {
+                if (nombre.equals(nombreProducto)) {
+                    // Si encontramos una coincidencia, retornamos el producto
+                    return new FiltroBusquedaDTO(producto.getCodigo(),
+                            producto.getCategoria(),
+                            producto.getSubcategoria(),
+                            nombre,
+                            producto.getPrecio(),
+                            producto.getProveedor());
+                }
+            }
+        }
+        for (Producto producto : productos) {
+            for (String nombre : producto.getNombresDulces()) {
+                if (nombre.equals(nombreProducto)) {
+                    // Si encontramos una coincidencia, retornamos el producto
+                    return new FiltroBusquedaDTO(producto.getCodigo(),
+                            producto.getCategoria(),
+                            producto.getSubcategoria(),
+                            nombre,
+                            producto.getPrecio(),
+                            producto.getProveedor());
+                }
+            }
+        }
+        for (Producto producto : productos) {
+            for (String nombre : producto.getNombresGaseosas()) {
+                if (nombre.equals(nombreProducto)) {
+                    // Si encontramos una coincidencia, retornamos el producto
+                    return new FiltroBusquedaDTO(producto.getCodigo(),
+                            producto.getCategoria(),
+                            producto.getSubcategoria(),
+                            nombre,
+                            producto.getPrecio(),
+                            producto.getProveedor());
+                }
+            }
+        }
+
+        return null;
+    }
+
+    @Override
+    @Transactional
+    public List<ItemProductoDTO> listarProductos() {
+
+        List<Producto> productos = productoRepo.findAll();
+        List<ItemProductoDTO> productoAREtornar = new ArrayList<>();
+
+        for (Producto producto : productos) {
+            for (String nombre : producto.getNombresAlcohol()) {
+                if(producto.getCantidad() >= 1) {
+                    productoAREtornar.add(new ItemProductoDTO(
+                            producto.getCodigo(),
+                            producto.getCategoria(),
+                            producto.getSubcategoria(),
+                            nombre,
+                            producto.getPrecio(),
+                            producto.getProveedor()
+                    ));
+                }
+            }
+            for (String nombre : producto.getNombresDulces()) {
+                if (producto.getCantidad() >= 1){
+                    productoAREtornar.add(new ItemProductoDTO(
+                            producto.getCodigo(),
+                            producto.getCategoria(),
+                            producto.getSubcategoria(),
+                            nombre,
+                            producto.getPrecio(),
+                            producto.getProveedor()
+                    ));
+                }
+            }
+            for (String nombre : producto.getNombresGaseosas()) {
+                if(producto.getCantidad() >= 1) {
+                    productoAREtornar.add(new ItemProductoDTO(
+                            producto.getCodigo(),
+                            producto.getCategoria(),
+                            producto.getSubcategoria(),
+                            nombre,
+                            producto.getPrecio(),
+                            producto.getProveedor()
+                    ));
+                }
+            }
+        }
+
+        return productoAREtornar;
     }
 
 }

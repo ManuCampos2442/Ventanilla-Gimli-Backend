@@ -1,7 +1,6 @@
 package co.ventanilla_gimli.controladores;
 
-import co.ventanilla_gimli.dto.RegistroProductoDTO;
-import co.ventanilla_gimli.dto.RegistroVentaEmpleadoDTO;
+import co.ventanilla_gimli.dto.*;
 import co.ventanilla_gimli.dto.TokenDTO.MensajeDTO;
 import co.ventanilla_gimli.model.Categoria;
 import co.ventanilla_gimli.model.Subcategoria;
@@ -24,6 +23,24 @@ public class VentanillaController {
     public ResponseEntity<MensajeDTO<List<Categoria>>> listarCategorias(){
         return ResponseEntity.ok().body( new MensajeDTO<>(false,
                 ventanillaServicio.listarCategorias()));
+    }
+
+    @GetMapping("/filtar-productos-nombre/{nombreProducto}")
+    public ResponseEntity<MensajeDTO<FiltroBusquedaDTO>> filtrarProductoPorNombre(@PathVariable String nombreProducto) throws Exception{
+        return ResponseEntity.ok().body( new MensajeDTO<>(false,
+                ventanillaServicio.filtrarProductoPorNombre(nombreProducto)));
+    }
+
+    @GetMapping("/listar-productos")
+    public ResponseEntity<MensajeDTO<List<ItemProductoDTO>>> listarProductos() throws Exception{
+        return ResponseEntity.ok().body( new MensajeDTO<>(false,
+                ventanillaServicio.listarProductos()));
+    }
+
+    @GetMapping("/detalle-producto/{codigoProducto}")
+    public ResponseEntity<MensajeDTO<DetalleProductoDTO>> verDetalleRegistro(@PathVariable int codigoProducto) throws Exception{
+        return ResponseEntity.ok().body( new MensajeDTO<>(false,
+                ventanillaServicio.verDetalleProducto(codigoProducto)));
     }
 
     @GetMapping("/lista-subcategorias")

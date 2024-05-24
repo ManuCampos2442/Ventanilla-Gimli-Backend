@@ -107,10 +107,7 @@ public class EmpleadoServicioImpl implements EmpleadoServicio {
             String horaActualString = horaActual.toString(); // Convertir a formato de cadena
             r.setHoraDeRegistro(horaActualString);
 
-
             registroProductosRepo.save(r);
-
-
 
     }
 
@@ -142,7 +139,6 @@ public class EmpleadoServicioImpl implements EmpleadoServicio {
                 ));
             }
         }
-
 
         return registros;
     }

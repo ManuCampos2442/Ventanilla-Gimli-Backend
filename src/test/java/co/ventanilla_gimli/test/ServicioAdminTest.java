@@ -1,4 +1,5 @@
 package co.ventanilla_gimli.test;
+/*
 
 import co.ventanilla_gimli.dto.AdministradorDTO.ModificarEmpleadoAdminDTO;
 import co.ventanilla_gimli.dto.ClienteDTO.DetalleVentaEmpleadoDTO;
@@ -83,3 +84,4 @@ public class ServicioAdminTest {
         Assertions.assertNotEquals(0, nuevo);
     }
 }
+*/

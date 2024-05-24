@@ -18,4 +18,5 @@ public interface VentaEmpleadoRepo extends JpaRepository<VentaEmpleado, Integer>
     @Transactional
     @Query("UPDATE RegistroProducto r SET r.empleado = NULL WHERE r.empleado = ?1")
     void desvincularRegistrosDeEmpleado(Empleado empleado);
+
 }

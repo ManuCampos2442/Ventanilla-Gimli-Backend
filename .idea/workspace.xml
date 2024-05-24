@@ -5,88 +5,32 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="750568e8-575b-456f-ab0f-23e86646accd" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gradlew" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gradlew.bat" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/settings.gradle" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/co/ventanilla_gimli/VentanillaApplication.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/co/ventanilla_gimli/controladores/AdministradorController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/co/ventanilla_gimli/controladores/AutenticacionController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/co/ventanilla_gimli/controladores/ClienteController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/co/ventanilla_gimli/controladores/EmpleadoController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/co/ventanilla_gimli/controladores/VentanillaController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/co/ventanilla_gimli/controladores/excepciones/ExcepcionesGlobales.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/co/ventanilla_gimli/dto/AdministradorDTO/ModificarEmpleadoAdminDTO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/co/ventanilla_gimli/dto/AgregarProductoDTO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/co/ventanilla_gimli/dto/ClienteDTO/DetalleVentaEmpleadoDTO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/co/ventanilla_gimli/dto/ClienteDTO/ModificarClienteDTO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/co/ventanilla_gimli/dto/ClienteDTO/RegistroClienteDTO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/co/ventanilla_gimli/dto/DetalleProductoDTO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/co/ventanilla_gimli/dto/DetalleRegistroProductoDTO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/co/ventanilla_gimli/dto/EmailDTO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/co/ventanilla_gimli/dto/FiltroBusquedaDTO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/co/ventanilla_gimli/dto/ItemProductoDTO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/co/ventanilla_gimli/dto/ItemRegistroProductoDTO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/co/ventanilla_gimli/dto/ItemVentaEmpleadoDTO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/co/ventanilla_gimli/dto/LoginDTO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/co/ventanilla_gimli/dto/RegistroAgregacionProductoDTO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/co/ventanilla_gimli/dto/RegistroCompraClienteDTO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/co/ventanilla_gimli/dto/RegistroEmpleadoDTO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/co/ventanilla_gimli/dto/RegistroProductoDTO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/co/ventanilla_gimli/dto/RegistroVentaEmpleadoDTO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/co/ventanilla_gimli/dto/TokenDTO/MensajeDTO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/co/ventanilla_gimli/dto/TokenDTO/TokenDTO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/co/ventanilla_gimli/dto/ValidacionDTO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/co/ventanilla_gimli/model/Administrador.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/co/ventanilla_gimli/model/Categoria.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/co/ventanilla_gimli/model/Cliente.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/co/ventanilla_gimli/model/Cuenta.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/co/ventanilla_gimli/model/DetalleVenta.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/co/ventanilla_gimli/model/Empleado.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/co/ventanilla_gimli/model/MetodologiaPago.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/co/ventanilla_gimli/model/Producto.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/co/ventanilla_gimli/model/RegistroProducto.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/co/ventanilla_gimli/model/Subcategoria.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/co/ventanilla_gimli/model/Usuario.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/co/ventanilla_gimli/model/VentaCliente.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/co/ventanilla_gimli/model/VentaEmpleado.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/co/ventanilla_gimli/repositorios/AdministradorRepo.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/co/ventanilla_gimli/repositorios/ClienteRepo.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/co/ventanilla_gimli/repositorios/CuentaRepo.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/co/ventanilla_gimli/repositorios/EmpleadoRepo.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/co/ventanilla_gimli/repositorios/ProductoRepo.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/co/ventanilla_gimli/repositorios/RegistroProductosRepo.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/co/ventanilla_gimli/repositorios/VentaClienteRepo.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/co/ventanilla_gimli/repositorios/VentaEmpleadoRepo.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/co/ventanilla_gimli/servicios/impl/AdministradorServicioImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/co/ventanilla_gimli/servicios/impl/AutenticacionServicioImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/co/ventanilla_gimli/servicios/impl/ClienteServicioImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/co/ventanilla_gimli/servicios/impl/EmailServicioImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/co/ventanilla_gimli/servicios/impl/EmpleadoServicioImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/co/ventanilla_gimli/servicios/impl/ProductoServicioImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/co/ventanilla_gimli/servicios/impl/VentanillaServicioImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/co/ventanilla_gimli/servicios/interfaces/AdministradorServicio.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/co/ventanilla_gimli/servicios/interfaces/AutenticacionServicio.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/co/ventanilla_gimli/servicios/interfaces/ClienteServicio.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/co/ventanilla_gimli/servicios/interfaces/EmailServicio.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/co/ventanilla_gimli/servicios/interfaces/EmpleadoServicio.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/co/ventanilla_gimli/servicios/interfaces/ProductoServicio.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/co/ventanilla_gimli/servicios/interfaces/VentanillaServicio.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/co/ventanilla_gimli/utils/FiltroToken.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/co/ventanilla_gimli/utils/JWTUtils.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/co/ventanilla_gimli/test/SerivicioProductoTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/co/ventanilla_gimli/test/ServicioAdminTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/co/ventanilla_gimli/test/ServicioClienteTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/co/ventanilla_gimli/test/ServicioRegistroProductoTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/co/ventanilla_gimli/dto/AdministradorDTO/ItemEmpleadoDTO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/co/ventanilla_gimli/dto/ClienteDTO/DetalleCompraClienteDTO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/co/ventanilla_gimli/dto/ClienteDTO/ItemCompraClienteDTO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/co/ventanilla_gimli/repositorios/DetalleVentaClienteRepo.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/application-prod.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/co/ventanilla_gimli/controladores/AdministradorController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/co/ventanilla_gimli/controladores/AdministradorController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/co/ventanilla_gimli/controladores/ClienteController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/co/ventanilla_gimli/controladores/ClienteController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/co/ventanilla_gimli/controladores/VentanillaController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/co/ventanilla_gimli/controladores/VentanillaController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/co/ventanilla_gimli/dto/RegistroCompraClienteDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/co/ventanilla_gimli/dto/RegistroCompraClienteDTO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/co/ventanilla_gimli/model/DetalleVenta.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/co/ventanilla_gimli/model/DetalleVentaCliente.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/co/ventanilla_gimli/model/VentaCliente.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/co/ventanilla_gimli/model/VentaCliente.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/co/ventanilla_gimli/repositorios/VentaEmpleadoRepo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/co/ventanilla_gimli/repositorios/VentaEmpleadoRepo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/co/ventanilla_gimli/servicios/impl/AdministradorServicioImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/co/ventanilla_gimli/servicios/impl/AdministradorServicioImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/co/ventanilla_gimli/servicios/impl/ClienteServicioImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/co/ventanilla_gimli/servicios/impl/ClienteServicioImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/co/ventanilla_gimli/servicios/impl/EmpleadoServicioImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/co/ventanilla_gimli/servicios/impl/EmpleadoServicioImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/co/ventanilla_gimli/servicios/impl/VentanillaServicioImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/co/ventanilla_gimli/servicios/impl/VentanillaServicioImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/co/ventanilla_gimli/servicios/interfaces/AdministradorServicio.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/co/ventanilla_gimli/servicios/interfaces/AdministradorServicio.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/co/ventanilla_gimli/servicios/interfaces/ClienteServicio.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/co/ventanilla_gimli/servicios/interfaces/ClienteServicio.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/co/ventanilla_gimli/servicios/interfaces/VentanillaServicio.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/co/ventanilla_gimli/servicios/interfaces/VentanillaServicio.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/co/ventanilla_gimli/utils/JWTUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/co/ventanilla_gimli/utils/JWTUtils.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/co/ventanilla_gimli/test/SerivicioProductoTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/co/ventanilla_gimli/test/SerivicioProductoTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/co/ventanilla_gimli/test/ServicioAdminTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/co/ventanilla_gimli/test/ServicioAdminTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/co/ventanilla_gimli/test/ServicioClienteTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/co/ventanilla_gimli/test/ServicioClienteTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/co/ventanilla_gimli/test/ServicioRegistroProductoTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/co/ventanilla_gimli/test/ServicioRegistroProductoTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -111,6 +55,17 @@
                 <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
                 <item name="Ventanilla_Gimli" type="f1a62948:ProjectNode" />
               </path>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="Ventanilla_Gimli" type="f1a62948:ProjectNode" />
+                <item name="Tasks" type="e4a08cd1:TasksNode" />
+              </path>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="Ventanilla_Gimli" type="f1a62948:ProjectNode" />
+                <item name="Tasks" type="e4a08cd1:TasksNode" />
+                <item name="build" type="c8890929:TasksNode$1" />
+              </path>
             </expand>
             <select />
           </tree_state>
@@ -122,8 +77,8 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Enum" />
-        <option value="Interface" />
         <option value="Class" />
+        <option value="Interface" />
         <option value="Record" />
       </list>
     </option>
@@ -163,7 +118,7 @@
     &quot;git-widget-placeholder&quot;: &quot;main&quot;,
     &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
     &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/manu7/Desktop/Inge Soft 3/Laboratorio #1/Ventanilla_Gimli&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/manu7/Desktop/Bases 2/Garcia/Quizam&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
@@ -237,50 +192,29 @@
       <DebugAllEnabled>false</DebugAllEnabled>
       <method v="2" />
     </configuration>
-    <configuration name="ServicioAdminTest.listarCedulas" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+    <configuration name="Ventanilla_Gimli [build]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
         <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" value="" />
+        <option name="scriptParameters" />
         <option name="taskDescriptions">
           <list />
         </option>
         <option name="taskNames">
           <list>
-            <option value=":test" />
-            <option value="--tests" />
-            <option value="&quot;co.ventanilla_gimli.test.ServicioAdminTest.listarCedulas&quot;" />
+            <option value="build" />
           </list>
         </option>
         <option name="vmOptions" />
       </ExternalSystemSettings>
-      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
+      <ExternalSystemDebugServerProcess>true</ExternalSystemDebugServerProcess>
       <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
       <DebugAllEnabled>false</DebugAllEnabled>
       <method v="2" />
     </configuration>
-    <configuration name="ServicioAdminTest.modificarDatos" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
-      <ExternalSystemSettings>
-        <option name="executionName" />
-        <option name="externalProjectPath" value="$PROJECT_DIR$" />
-        <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" value="" />
-        <option name="taskDescriptions">
-          <list />
-        </option>
-        <option name="taskNames">
-          <list>
-            <option value=":test" />
-            <option value="--tests" />
-            <option value="&quot;co.ventanilla_gimli.test.ServicioAdminTest.modificarDatos&quot;" />
-          </list>
-        </option>
-        <option name="vmOptions" />
-      </ExternalSystemSettings>
-      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
-      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
-      <DebugAllEnabled>false</DebugAllEnabled>
+    <configuration name="app.jar" type="JarApplication" temporary="true">
+      <option name="JAR_PATH" value="$PROJECT_DIR$/build/libs/app.jar" />
       <method v="2" />
     </configuration>
     <configuration name="VentanillaApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
@@ -299,10 +233,10 @@
     <recent_temporary>
       <list>
         <item itemvalue="Spring Boot.VentanillaApplication" />
+        <item itemvalue="JAR Application.app.jar" />
+        <item itemvalue="Gradle.Ventanilla_Gimli [build]" />
         <item itemvalue="Gradle.ServicioAdminTest.detallesVenta" />
         <item itemvalue="Gradle.ServicioAdminTest.listaVentasEmpleados" />
-        <item itemvalue="Gradle.ServicioAdminTest.modificarDatos" />
-        <item itemvalue="Gradle.ServicioAdminTest.listarCedulas" />
       </list>
     </recent_temporary>
   </component>
@@ -366,6 +300,28 @@
       <workItem from="1714347403859" duration="1332000" />
       <workItem from="1714362236789" duration="2170000" />
       <workItem from="1714407201957" duration="740000" />
+      <workItem from="1714521539762" duration="431000" />
+      <workItem from="1714863482512" duration="828000" />
+      <workItem from="1714960945064" duration="3196000" />
+      <workItem from="1715733202420" duration="11000" />
+      <workItem from="1715733236656" duration="2265000" />
+      <workItem from="1715745027247" duration="2226000" />
+      <workItem from="1715888577958" duration="23000" />
+      <workItem from="1715890124950" duration="540000" />
+      <workItem from="1715892208757" duration="10000" />
+      <workItem from="1715971909974" duration="426000" />
+      <workItem from="1716307199775" duration="143000" />
+      <workItem from="1716307683630" duration="1475000" />
+      <workItem from="1716393980294" duration="3365000" />
+      <workItem from="1716482824241" duration="2901000" />
+      <workItem from="1716486835006" duration="125000" />
+      <workItem from="1716492387232" duration="2904000" />
+      <workItem from="1716497362980" duration="42000" />
+      <workItem from="1716497518533" duration="3168000" />
+      <workItem from="1716503566298" duration="1072000" />
+      <workItem from="1716518319138" duration="24000" />
+      <workItem from="1716559307016" duration="23000" />
+      <workItem from="1716559559770" duration="7325000" />
     </task>
     <servers />
   </component>
@@ -377,8 +333,8 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="java-method">
           <url>file://$PROJECT_DIR$/src/test/java/co/ventanilla_gimli/test/ServicioAdminTest.java</url>
-          <line>67</line>
-          <properties class="co.ventanilla_gimli.test.ServicioAdminTest" method="listaVentasEmpleados">
+          <line>68</line>
+          <properties class="co.ventanilla_gimli.test.ServicioAdminTest">
             <option name="EMULATED" value="true" />
             <option name="WATCH_EXIT" value="false" />
           </properties>

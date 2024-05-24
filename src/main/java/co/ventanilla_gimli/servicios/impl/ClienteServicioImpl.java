@@ -1,6 +1,8 @@
 package co.ventanilla_gimli.servicios.impl;
 
 import co.ventanilla_gimli.dto.*;
+import co.ventanilla_gimli.dto.ClienteDTO.DetalleCompraClienteDTO;
+import co.ventanilla_gimli.dto.ClienteDTO.ItemCompraClienteDTO;
 import co.ventanilla_gimli.dto.ClienteDTO.ModificarClienteDTO;
 import co.ventanilla_gimli.dto.ClienteDTO.RegistroClienteDTO;
 import co.ventanilla_gimli.model.*;
@@ -29,6 +31,7 @@ public class ClienteServicioImpl implements ClienteServicio{
     private final VentaEmpleadoRepo ventaEmpleadoRepo;
     private final VentaClienteRepo ventaClienteRepo;
     private final EmailServicio emailServicio;
+    private final DetalleVentaClienteRepo detalleVentaClienteRepo;
 
     @Override
     public int registrarCliente(RegistroClienteDTO registroClienteDTO) throws Exception {
@@ -112,6 +115,31 @@ public class ClienteServicioImpl implements ClienteServicio{
     }
 
     @Override
+    public List<ItemCompraClienteDTO> comprasRealizadas(int codigoCliente) {
+
+        String correoCliente = correoCliente(codigoCliente);
+
+        List<DetalleVentaCliente> compras = detalleVentaClienteRepo.findAllByCorreoCliente(correoCliente);
+        List<ItemCompraClienteDTO> comprasARetornar = new ArrayList<>();
+
+        for (DetalleVentaCliente d : compras){
+            comprasARetornar.add(new ItemCompraClienteDTO(
+                    d.getCodigo(),
+                    d.getNombreProducto(),
+                    d.getCantidad(),
+                    d.getFechaVenta()
+            ));
+        }
+
+        return comprasARetornar;
+    }
+
+    private String correoCliente(int codigoCliente) {
+        Optional<Cliente> clienteEncontrado = clienteRepo.findById(codigoCliente);
+        return clienteEncontrado.get().getCorreo();
+    }
+
+    @Override
     @Transactional
     public List<ItemProductoDTO> listarProductos() {
 
@@ -158,6 +186,28 @@ public class ClienteServicioImpl implements ClienteServicio{
         }
 
         return productoAREtornar;
+    }
+
+    @Override
+    public DetalleCompraClienteDTO verDetalleCompra(int codigoCompra) throws Exception {
+
+        Optional<DetalleVentaCliente> compra = detalleVentaClienteRepo.findById(codigoCompra);
+
+        return new DetalleCompraClienteDTO(
+                compra.get().getCodigo(),
+                compra.get().getNombreProducto(),
+                compra.get().getDescripcion(),
+                compra.get().getPrecio(),
+                compra.get().getCantidad(),
+                compra.get().getFechaVenta(),
+                compra.get().getHoraDeVenta(),
+                compra.get().getDireccion(),
+                compra.get().getDevueltas(),
+                compra.get().getNombreCliente(),
+                compra.get().getCorreoCliente(),
+                compra.get().getTelefono(),
+                compra.get().getVenta().getCodigo()
+        );
     }
 
     @Override
@@ -208,8 +258,6 @@ public class ClienteServicioImpl implements ClienteServicio{
             }
 
         }
-
-
 
         return null;
     }
@@ -263,6 +311,15 @@ public class ClienteServicioImpl implements ClienteServicio{
         return null;
     }
 
+    private boolean comprobacionPrecioCantidad(int cantidad, double precio) {
+        if(precio <= 1500){
+            if(cantidad <= 10){
+                return  true;
+            }
+        }
+        return  false;
+    }
+
     @Override
     public int realizarCompra(RegistroCompraClienteDTO registroCompraClienteDTO) throws Exception{
 
@@ -278,18 +335,26 @@ public class ClienteServicioImpl implements ClienteServicio{
         if(registroCompraClienteDTO.dinero() < totalAPagar){
             throw  new Exception("Dinero insuficiente");
         }
+        if(comprobacionPrecioCantidad(registroCompraClienteDTO.cantidad(), productoEncontrado.getPrecio()) == true){
+            throw  new Exception("Para realizar la compra, debe adquirir mas de 10 productos");
+        }
         double dineroADevolver = totalAPagar - registroCompraClienteDTO.dinero();
         if(registroCompraClienteDTO.cantidad() > productoEncontrado.getCantidad()){
             int cantidadARestar = (productoEncontrado.getCantidad() - registroCompraClienteDTO.cantidad()) * -1;
             throw  new Exception("No hay tanta cantidad de producto, si desea puede restarle " + cantidadARestar + " a la cantidad de productos");
+        }
+        if(registroCompraClienteDTO.cantidad() <= 0){
+            throw  new Exception("La cantidad a comprar no puede ser menor o igual a 0");
         }
 
         VentaCliente venta = new VentaCliente();
 
         venta.setProducto(productoEncontrado);
         venta.setCliente(clienteEncontrado.get());
+        venta.setDireccion(registroCompraClienteDTO.direccion());
         venta.setCantidad(registroCompraClienteDTO.cantidad());
         venta.setPrecioUnitario(productoEncontrado.getPrecio());
+
 
         int nuevaCantidad = productoEncontrado.getCantidad() - registroCompraClienteDTO.cantidad();
         productoEncontrado.setCantidad(nuevaCantidad);
@@ -303,21 +368,50 @@ public class ClienteServicioImpl implements ClienteServicio{
         String horaActualString = horaActual.toString(); // Convertir a formato de cadena
         venta.setHoraDeVenta(horaActualString);
 
-
-
         VentaCliente ventaNueva = ventaClienteRepo.save(venta);
         productoRepo.save(productoEncontrado);
+
+        hacerRegistroVenta(registroCompraClienteDTO.nombreProducto(), productoEncontrado,
+                registroCompraClienteDTO.cantidad(), fechaActual, horaActualString, registroCompraClienteDTO.direccion(),
+                dineroADevolver, venta);
 
         emailServicio.enviarCorreo(new EmailDTO(
                 clienteEncontrado.get().getCorreo(),
                 "Se ha registrado la compra con éxito",
                 "La compra del producto " + registroCompraClienteDTO.nombreProducto()+ " ha sido un" +
                         " exito, gracias por comprar en la Ventanilla Gimli. La cantidad de producto comprado fue de: " + registroCompraClienteDTO.cantidad() +  "." +
-                        " Sus devueltas son: " + (dineroADevolver)*(-1) + "$"
+                        " Sus devueltas son: " + (dineroADevolver)*(-1) + "$" + "\n" +
+                        " - Fecha de la venta: " + fechaActual + "\n" +
+                        " - Hora de la venta: " + horaActual + "\n" +
+                        " - Correo del cliente: " + clienteEncontrado.get().getCorreo() + "\n" +
+                        " - Direccion del cliente: " + registroCompraClienteDTO.direccion()
+
         ));
 
         return ventaNueva.getCodigo();
     }
+
+    private void hacerRegistroVenta(String nombreProducto, Producto productoEncontrado, int cantidad,
+                                    LocalDate fechaActual, String horaActual, String direccion, double dineroADevolver, VentaCliente venta) {
+
+        DetalleVentaCliente Detalleventa = new DetalleVentaCliente();
+        Detalleventa.setNombreProducto(nombreProducto);
+        Detalleventa.setDescripcion(productoEncontrado.getDescripcion());
+        Detalleventa.setPrecio( productoEncontrado.getPrecio());
+        Detalleventa.setCantidad(cantidad);
+        Detalleventa.setFechaVenta(fechaActual);
+        Detalleventa.setHoraDeVenta(horaActual);
+        Detalleventa.setDireccion(direccion);
+        Detalleventa.setDevueltas(dineroADevolver * (-1));
+        Detalleventa.setNombreCliente(venta.getCliente().getNombre());
+        Detalleventa.setCorreoCliente(venta.getCliente().getCorreo());
+        Detalleventa.setTelefono(venta.getCliente().getTelefono());
+        Detalleventa.setVenta(venta);
+
+        detalleVentaClienteRepo.save(Detalleventa);
+
+    }
+
 
     private int generarNumeroAleatorio(int min, int max) {
         Random random = new Random();

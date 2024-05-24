@@ -1,6 +1,8 @@
 package co.ventanilla_gimli.controladores;
 
 import co.ventanilla_gimli.dto.*;
+import co.ventanilla_gimli.dto.ClienteDTO.DetalleCompraClienteDTO;
+import co.ventanilla_gimli.dto.ClienteDTO.ItemCompraClienteDTO;
 import co.ventanilla_gimli.dto.ClienteDTO.ModificarClienteDTO;
 import co.ventanilla_gimli.dto.TokenDTO.MensajeDTO;
 import co.ventanilla_gimli.servicios.interfaces.ClienteServicio;
@@ -55,5 +57,17 @@ public class ClienteController {
     public ResponseEntity<MensajeDTO<DetalleProductoDTO>> verDetalleRegistro(@PathVariable int codigoProducto) throws Exception{
         return ResponseEntity.ok().body( new MensajeDTO<>(false,
                 clienteServicio.verDetalleProducto(codigoProducto)));
+    }
+
+    @GetMapping("/detalle-compra-cliente/{codigoCompra}")
+    public ResponseEntity<MensajeDTO<DetalleCompraClienteDTO>> verDetalleCompraRealizada(@PathVariable int codigoCompra) throws Exception{
+        return ResponseEntity.ok().body( new MensajeDTO<>(false,
+                clienteServicio.verDetalleCompra(codigoCompra)));
+    }
+
+    @GetMapping("/lista-compras-cliente/{codigoCliente}")
+    public ResponseEntity<MensajeDTO<List<ItemCompraClienteDTO>>> listaComprasCliente(@PathVariable int codigoCliente) throws Exception{
+        return ResponseEntity.ok().body( new MensajeDTO<>(false,
+                clienteServicio.comprasRealizadas(codigoCliente)));
     }
 }

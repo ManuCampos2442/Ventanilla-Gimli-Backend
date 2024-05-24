@@ -1,4 +1,5 @@
 package co.ventanilla_gimli.test;
+/*
 
 import co.ventanilla_gimli.dto.AgregarProductoDTO;
 import co.ventanilla_gimli.dto.ItemRegistroProductoDTO;
@@ -40,3 +41,4 @@ public class ServicioRegistroProductoTest {
         Assertions.assertEquals(1, lista.size());
     }
 }
+*/

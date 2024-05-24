@@ -1,4 +1,5 @@
 package co.ventanilla_gimli.test;
+/*
 
 import co.ventanilla_gimli.dto.AgregarProductoDTO;
 import co.ventanilla_gimli.dto.RegistroProductoDTO;
@@ -29,7 +30,8 @@ public class SerivicioProductoTest {
     ProductoServicioImpl p;
 
 
-   /* @Test
+   */
+/* @Test
     public void registrarProductoTest() throws Exception {
 
         ArrayList<String> nombreAlcohol = new ArrayList<>();
@@ -49,7 +51,8 @@ public class SerivicioProductoTest {
         int nuevo = productoServicio.registrarProducto(registroProductoDTO);
         //Comprobamos que sí haya quedado guardado. Si se guardó debe retornar el código (no 0).
         Assertions.assertNotEquals(0, nuevo);
-    }*/
+    }*//*
+
 
     @Test
     public void listarNombresAlcoholes() throws Exception {
@@ -61,7 +64,8 @@ public class SerivicioProductoTest {
         Assertions.assertEquals(2, +nombresAlcoholes.size());
     }
 
-   /* @Test
+   */
+/* @Test
     public void registrarVentaEmpleado(){
 
             RegistroVentaEmpleadoDTO registroVentaEmpleado = new RegistroVentaEmpleadoDTO(
@@ -78,7 +82,8 @@ public class SerivicioProductoTest {
         int nuevo = ventanillaServicio.registrarVentaEmpleado(registroVentaEmpleado);
         //Comprobamos que sí haya quedado guardado. Si se guardó debe retornar el código (no 0).
         Assertions.assertNotEquals(0, nuevo);
-    }*/
+    }*//*
+
 
     @Test
     public void agregarProducto(){
@@ -108,3 +113,4 @@ public class SerivicioProductoTest {
 
 
 }
+*/

@@ -25,6 +25,8 @@ public class VentaCliente implements Serializable {
     @Column(nullable = false)
     private double precioUnitario;
     @Column(nullable = false)
+    private String direccion;
+    @Column(nullable = false)
     private double dinero;
     //______________________________________________________________________________________
 
@@ -35,5 +37,6 @@ public class VentaCliente implements Serializable {
     @ManyToOne
     private  Producto producto;
 
-    //private DetalleVenta detalleVenta;
+    @OneToOne(mappedBy = "venta")
+    private DetalleVentaCliente detalleVenta;
 }

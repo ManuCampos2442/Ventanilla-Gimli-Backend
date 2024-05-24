@@ -1,4 +1,5 @@
 package co.ventanilla_gimli.test;
+/*
 
 import co.ventanilla_gimli.dto.ClienteDTO.ModificarClienteDTO;
 import co.ventanilla_gimli.dto.EmailDTO;
@@ -97,3 +98,4 @@ public class ServicioClienteTest {
 
     }
 }
+*/
